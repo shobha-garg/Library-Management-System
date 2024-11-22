@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Librarian's monthly report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    </head>
+    <body>
+        <main>
+            <h1> Monthly Report</h1>
+            <p class="mt-5">For {{ month }}, {{ year }}</p>
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th>
+                                Book
+                            </th>
+                            <th>
+                                Issued date
+                            </th>
+                            <th>
+                                Return date
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in issued_books %}
+                        <tr>
+                            <td>
+                                {{ item.book.title }}
+                            </td>
+                            <td>
+                                 {{ item.issue_date }}
+                            </td>
+                            <td>
+                                 {{ item.return_date }}
+                            </td>
+                            <td>
+                                {% if item.is_returned %}
+                                    Returned
+                                {% else %}
+                                    Not Returned
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table> 
+        </main>
+    </body>
+</html>

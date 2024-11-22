@@ -1,0 +1,24 @@
+.form-floating.input-group .form-label {
+    z-index: 5 !important;
+}
+
+nav:hover {
+    box-shadow: var(--bs-box-shadow) !important;
+}
+
+.hover {
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+}
+
+.hover-shadow-sm:hover {
+    box-shadow: var(--bs-box-shadow-sm) !important;
+}
+
+.hover-shadow:hover {
+    box-shadow: var(--bs-box-shadow) !important;
+}
+
+.hover-shadow-lg:hover {
+    box-shadow: var(--bs-box-shadow-lg) !important;
+}
